@@ -1,21 +1,19 @@
 //vanilla,vanilla,vanilla,strawberry,coffee,coffee
 
-const fprompt = window.prompt('Enter your favorite froyo flavors', 'vanilla,vanilla,vanilla,strawberry,coffee,coffee');
-const arr = fprompt.split(',');
-const stats = {
+const fprompt = window.prompt(
+  "Enter your favorite froyo flavors",
+  "vanilla,vanilla,vanilla,strawberry,coffee,coffee"
+);
+const arr = fprompt.split(",");
+const stats = {};
 
-
-
-
-
-};
-
-for(let i=0; i < arr.length; i++){
-    const fprompt = arr[i];
-    if(stats[fprompt] === undefined){
-        stats[fprompt] = 0;
-    }
-    stats[fprompt] = stats[fprompt] = 1;
+for (let i = 0; i < arr.length; i++) {
+  const flavor = arr[i];
+  if (stats[flavor] === undefined) {
+    stats[flavor] = 1;
+  } else {
+    stats[flavor]++;
+  }
 }
 
-console.log(stats);
+console.table(stats);
